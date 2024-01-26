@@ -33,9 +33,7 @@ func (u *Url) parse(url string) {
 	u.path = path_pattern.FindString(url)
 	u.hash = hash_pattern.FindString(url)
 	query := query_pattern.FindString(url)
-	if query != "" {
-		u.search = NewUrlSearchParams(query)
-	}
+	u.search = NewUrlSearchParams(query)
 }
 
 func (u *Url) String() string {
